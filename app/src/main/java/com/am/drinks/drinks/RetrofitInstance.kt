@@ -1,4 +1,4 @@
-package com.am.drinks.data
+package com.am.drinks.drinks
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -8,12 +8,6 @@ import retrofit2.http.Query
 interface CocktailApiService {
     @GET("search.php")
     suspend fun getDrinksByLetter(@Query("f") letter: Char): DrinkResponse
-
-    @GET("list.php?c=list")
-    suspend fun getCategories(): CategoryResponse
-
-    @GET("list.php?a=list")
-    suspend fun getAlcoholTypes(): AlcoholResponse
 }
 
 object RetrofitInstance {

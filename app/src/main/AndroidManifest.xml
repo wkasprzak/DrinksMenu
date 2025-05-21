@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Drinks"
         tools:targetApi="31">
 
-
+        <activity android:name=".CategoryDrinkListActivity" />
         <activity
             android:name=".DrinkDetailActivity"
             android:exported="false" />

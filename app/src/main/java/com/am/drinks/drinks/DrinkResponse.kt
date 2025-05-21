@@ -1,8 +1,6 @@
-package com.am.drinks.data
+package com.am.drinks.drinks
 
-data class DrinkResponse(
-    val drinks: List<ApiDrink>
-)
+data class DrinkResponse(val drinks: List<ApiDrink>)
 
 data class CategoryResponse(val drinks: List<CategoryItem>)
 data class CategoryItem(val strCategory: String)

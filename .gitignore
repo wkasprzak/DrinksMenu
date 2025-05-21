@@ -1,29 +1,29 @@
+# IntelliJ / Android Studio
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# Gradle
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
 local.properties
+
+# OS files
+.DS_Store
+
+# Kotlin / Java build
 *.class
-*.log
-*.ctxt
-.mtj.tmp/
 *.jar
-*.war
-*.nar
-*.ear
+*.log
 *.zip
 *.tar.gz
 *.rar
+
+# Error logs
 hs_err_pid*
 replay_pid*
+
+# Kotlin specific
 .kotlin/

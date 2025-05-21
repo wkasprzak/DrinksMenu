@@ -1,62 +1,35 @@
 package com.am.drinks.ui.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 
-import androidx.compose.material3.*
-
-
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
-
-private val LightColorScheme = lightColorScheme(
-    primary = Plum,
-    secondary = Coral,
-    background = Color(0xFFFFFBF2),
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onBackground = Color.Black,
-    onSurface = Color.Black
-
-//    primary = Purple40,
-//    secondary = PurpleGrey40,
-//    tertiary = Pink40
-
-    /* Other default colors to override
+private val LightColors = lightColorScheme(
+    primary = PlumLight,
+    secondary = RoseLight,
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
     onPrimary = Color.White,
     onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    onBackground = Color.Black,
+    onSurface = Color.Black,
 )
 
 @Composable
 fun DrinksTheme(
+    useDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    CompositionLocalProvider(
-        LocalCustomColors provides CustomColors(
-            plum = Plum,
-            rose = Rose,
-            coral = Coral,
-            peach = Peach,
-            vanilla = Vanilla
-        )
-    ) {
+    val colors = LightColors
+    val customColors = if (useDarkTheme) DarkCustomColors else LightCustomColors
+
+    CompositionLocalProvider(LocalCustomColors provides customColors) {
         MaterialTheme(
-            colorScheme = LightColorScheme,
-            typography = Typography(),
+            colorScheme = colors,
+            typography = Typography,
             content = content
         )
     }

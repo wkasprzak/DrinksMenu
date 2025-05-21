@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.coil.compose)
-
-
+    implementation(libs.gson)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.animation)
+    implementation(libs.material.icons.extended)
+    implementation("androidx.compose.ui:ui-text:1.8.1")
 }

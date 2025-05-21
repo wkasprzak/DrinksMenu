@@ -1,4 +1,5 @@
-package com.am.drinks.data
+package com.am.drinks.drinks
+
 import java.io.Serializable
 
 data class Drink(
@@ -7,9 +8,9 @@ data class Drink(
     val type: String,
     val category: String,
     val imageUrl: String? = null,
-    var time: Int = 20,
+    var personalBest: Int? = null,
     val instructions: String? = null,
     val glass: String? = null,
     val iba: String? = null,
-    val ingredients: List<String> = emptyList()
-) : Serializable
+    val ingredients: List<Pair<String, String?>>
+) : Serializable // for sending between views
